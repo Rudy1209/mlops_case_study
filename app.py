@@ -1,17 +1,9 @@
-from flask import Flask, request, render_template
-import pickle
-import numpy as np
-
+from flask import Flask
 app = Flask(__name__)
-model = pickle.load(open("model.pkl", "rb"))
 
-@app.route('/', methods=['GET', 'POST'])
-def predict():
-    if request.method == 'POST':
-        features = [float(x) for x in request.form.values()]
-        prediction = model.predict([features])
-        return render_template('index.html', result=f'Predicted Iris class: {prediction[0]}')
-    return render_template('index.html')
+@app.route('/')
+def home():
+    return "Hello from Docker!"
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5001)
