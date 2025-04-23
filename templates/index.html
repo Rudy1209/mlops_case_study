@@ -2,7 +2,8 @@
 <html>
   <head><title>Iris Predictor</title></head>
   <body>
-    <h2>Iris Species Predictor</h2>
+    <h1 style="color: darkgreen;">🌸 Welcome to the Iris Species Predictor (v2) 🌸</h1>
+    <p style="color: gray;">Enter flower measurements below to predict the species.</p>
     <form method="post">
       <input name="sepal_length" placeholder="Sepal Length">
       <input name="sepal_width" placeholder="Sepal Width">
@@ -10,6 +11,8 @@
       <input name="petal_width" placeholder="Petal Width">
       <button type="submit">Predict</button>
     </form>
-    {% if result %}<p>{{ result }}</p>{% endif %}
+   {% if result %}
+    <h3 style="color: blue;">{{ result }}</h3>
+  {% endif %}
   </body>
 </html>
