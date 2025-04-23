@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head><title>Iris Predictor</title></head>
+  <body>
+    <h2>Iris Species Predictor</h2>
+    <form method="post">
+      <input name="sepal_length" placeholder="Sepal Length">
+      <input name="sepal_width" placeholder="Sepal Width">
+      <input name="petal_length" placeholder="Petal Length">
+      <input name="petal_width" placeholder="Petal Width">
+      <button type="submit">Predict</button>
+    </form>
+    {% if result %}<p>{{ result }}</p>{% endif %}
+  </body>
+</html>
